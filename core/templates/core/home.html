@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+	<!-- Header Section -->
+	<section id="home-heading" class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<h2 class="text-center mb-4">Studio Flesz</h2>
+					<h5 class="text-center mb-4">Studio fotograficzne w Warszawie.<br>Fotografia studyjna i plenerowa. Wynajem planów zdjęciowych.</h5>					
+					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquam iusto accusamus porro deleniti, repellendus itaque quasi, tempora unde quas. Doloribus minus, odit laboriosam ducimus. Magnam consectetur eveniet doloremque, ducimus iure illo sequi debitis, expedita a dolor corporis, placeat fugit quibusdam non ipsum animi nam adipisci velit atque at. Accusantium at neque mollitia numquam similique temporibus non voluptatum, quis nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero doloribus odio magnam! Nulla ratione minus velit, perspiciatis!</p>
+				</div>
+
+			</div>
+			
+		</div>		
+	</section>
+
+	<!-- Home Icons Section -->
+	<section id="home-icon-section" class="pb-5">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-lg-8 mx-auto">
+					<div class="row">
+						<div class="col-md-4 d-flex flex-column">
+							<a href="{% url 'services_foto_studio' %}" class="mylink">
+								<img src="{% static 'core/img/home_portret.jpg' %}" class="img-fluid mb-3">
+								<h5 >Sesje Zdjęciowe</h5>
+							</a>
+						</div>
+						<div class="col-md-4 ">
+							<a href="{% url 'services_foto_weddings' %}" class="mylink">
+								<img src="{% static 'core/img/home_imprezy.jpg' %}" class="img-fluid mb-3">
+								<h5>Obsługa Fotograficzna i Wideo Imprez</h5>
+							</a>
+						</div>
+						<div class="col-md-4 ">
+							<a href="{% url 'services_lease' %}" class="mylink">
+								<img src="{% static 'core/img/home_wynajem.jpg' %}" class="img-fluid mb-3">
+								<h5>Wynajem Planów Zdjęciowych</h5>
+							</a>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

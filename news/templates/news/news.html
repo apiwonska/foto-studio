@@ -1,0 +1,37 @@
+	{% extends 'core/base.html' %}
+	{% load static %}
+
+	{% block content %}
+	<!-- news -->
+	<section id="news" class="py-5">
+		<div class="container" class="py-4">
+			<h2 class="text-center mb-5">Aktualności</h2>
+
+			{% for post in posts reversed %}
+				<div class="row mb-4">
+					<div class="col-md-4 mb-3">
+						<img src="{{post.image_small.url}}" class="img-fluid">
+					</div>
+					<div class="col-md-8">
+						<h5>{{post.title}}</h5>
+						<small>
+							{{post.published|date:"d E Y"}} 
+							| Kategorie: 		
+							{% for c in post.categories.all %}
+								<a href="{% url 'category' c.id %}">{{ c.name }}</a> 
+								{% if not forloop.last %}, {% endif %} 
+							{% endfor %} 	
+							| Autor: 
+							{{post.author}}
+						</small>
+						<p class="text-justify">{{ post.content_short }}...</p>
+						<a href="{% url 'news_post' post.id %}" class="">Dowiedz się więcej <i class="fas fa-long-arrow-alt-right"></i></a>		
+					</div>
+				</div>
+			{% endfor %}
+			
+		</div>
+	</section>
+
+	{% endblock %}
+	

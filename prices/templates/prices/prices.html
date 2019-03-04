@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+	<!-- Pricing -->
+	<section id="pricing" class="py-5">
+		
+		<div class="container ">
+			<h2 class="text-center mb-5">Cennik</h2>			
+			{% for list in price_lists %}
+				<div class="row my-4">
+					<div class="table-pricing col-lg-8 mx-auto">
+						<h4 class="text-center">{{list.title_price_list}}</h4>
+						<table class="table table-borderless mb-0">	
+							<tbody>
+								{% for price in prices %}
+									{% if price.price_list_id == list.id %}
+										<tr>
+											<td>{{price.service}}<br><small>{% if price.service_details %}{{price.service_details}}{% endif %}</small></td>
+											<td>{{price.price}} PLN</td>
+										</tr>
+									{% endif %}
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>			
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+	}

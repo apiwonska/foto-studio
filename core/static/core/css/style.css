@@ -1,0 +1,296 @@
+:root {
+	--lightgrey-color: #e5e5e5;
+}
+
+body {
+	background-image: url(../img/white_paperboard.png);
+}
+
+h1, h2 {
+	font-family: 'Lato', sans-serif ;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+h2::after {
+	content:" ";
+	display: block;
+	background: #d0d0d0;
+	width: 225px;
+	height: 3px;
+	margin: 20px auto;
+}
+
+h3, h4, h5, h6 {
+	font-family: 'Lato', sans-serif ;
+	font-weight: 600;
+}
+
+p {
+	font-family: 'Lato';
+	font-weight: 400;
+}
+
+.tstyle-light {
+	font-family: 'Lato';
+	font-weight: 300;
+	font-style: italic;
+}
+
+small {
+	font-style: italic;
+}
+
+.tstyle-faded {
+	color: rgba(0,0,0,0.5);
+}
+
+/*.active {
+	color: #000;
+}*/
+
+.tstyle-brand {
+	text-transform: uppercase;
+	font-family: 'Kodchasan', cursive;
+}
+
+.tstyle-brand-upper {
+	display: block;
+	font-size: 1em
+}
+
+.tstyle-brand-lower {
+	font-size:1.2em;
+}
+
+.mylink {
+	color: #000;
+}
+
+.mylink:hover {
+	text-decoration: none !important;
+	color: rgba(0,0,0,0.6);
+}
+
+ #siteHeading, #mainNav{
+	background: var(--lightgrey-color);
+}
+
+#siteHeading a {
+	color: #000;		
+}
+
+#siteHeading a:hover {
+	text-decoration: none !important; 
+}
+
+#siteHeading .fa-circle {
+	text-shadow: 1px 1px 2px grey;
+}
+
+#logo {
+	width: 90px;
+	height: 90px;
+}
+
+#mainNav {
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+#mainNav img {
+	width: 60px;
+	height: 60px;
+}
+
+#mainNav .dropdown-menu li a {
+	font-size: 0.85em;
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+}
+
+#mainNav .dropdown-menu {
+	margin-top: 0px;
+	border: transparent;
+	background: transparent;
+}
+
+#mainNav .dropdown-menu :hover {
+	background: transparent;
+	color: rgba(0,0,0,.9);
+}
+
+#navSocialMediaLinks {
+	font-size: 0.6em;
+}
+
+#navSocialMediaLinks a {
+	color: rgba(0,0,0,0.6);
+}
+
+.footer {
+	background: #151515;
+	color: var(--lightgrey-color);
+	border-color: white;
+}
+
+.footer a {
+	font-style: italic;
+	font-size: 0.9em;
+	color: grey;
+}
+.footer-line-vertical {
+	background: var(--lightgrey-color);
+	width: 2px;
+	height: all;
+}
+.footer-line-horizontal {
+	background: var(--lightgrey-color);
+	width: all;
+	height: 2px;
+}
+
+#creditsModal a {
+	color: grey;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+#creditsModal ul {
+	list-style: none;
+}
+
+/* Scroll to the top of the page*/
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background:  rgba(176,176,176,0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(176,176,176, 0.9);
+}
+#return-to-top:hover i {
+    top: 5px;
+}
+
+@media  (min-width: 992px) {
+	#mainNav .dropdown-menu {
+		margin-top: 17px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border: 1px solid rgba(0,0,0,0.1);
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+		border-top: transparent;
+		background: var(--lightgrey-color);
+	}	
+}
+
+/*----------------HOME-------------------*/
+#studio-slider {
+	height: 600px;
+}
+
+.carousel-inner > .item > img{
+	margin:auto;
+}
+
+/*----------------ABOUT-----------------*/
+
+#about img {
+	max-height: 466px;
+
+}
+
+@media  (min-width: 768px) {
+	#about .row:nth-of-type(2n+1) {
+	flex-direction: row-reverse;
+	}
+}
+/*  --------------OFFER-----------------*/
+
+
+
+
+/*  --------------PRICES.HTML-----------------*/
+.table-borderless td,
+.table-borderless th{ 
+	border: 0 !important
+}
+
+#pricing .table td:nth-child(1) {
+	width: 70%;
+}
+
+#pricing .table td:nth-child(2) {
+	width: 30%;
+}
+
+.table-pricing {
+	background: #fffdf6;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+	border-radius: 5px;
+	padding: 30px;
+}
+
+/*  --------------NEWS.HTML-----------------*/
+#news a {
+	font-weight: bold;
+	color: black;
+}
+
+#news a:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+/*------------NEWS_POST.HTML ----------------*/
+#postContent img {
+	width: 100%;
+}
+
+#postContent a {
+	font-weight: bold;
+	color: black;
+}
+
+#postContent a:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+/*  --------------CONTACT.HTML-----------------*/
+#contact-form {
+	background: #fffdf6;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+}

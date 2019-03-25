@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField(max_length=50, verbose_name='Kategoria')
-    created = models.DateTimeField(auto_now_add=True, verbose_name='Data utworzenia')
-    updated = models.DateTimeField(auto_now=True, verbose_name='Data utworzenia')
+    name = models.CharField(max_length=50, verbose_name='kategoria')
+    created = models.DateTimeField(auto_now_add=True, verbose_name='data utworzenia')
+    updated = models.DateTimeField(auto_now=True, verbose_name='data utworzenia')
 
     class Meta:
-        verbose_name = "Post: Kategoria"
-        verbose_name_plural = "Posty: Kategorie"
+        verbose_name = "post: Kategoria"
+        verbose_name_plural = "posty: Kategorie"
         ordering = ['-created']
 
     def __str__(self):
@@ -19,31 +19,31 @@ class Category(models.Model):
 
 
 class Post(models.Model):    
-    title = models.CharField(max_length=200, verbose_name='Tytuł') 
-    content = models.TextField(verbose_name='Tekst')
+    title = models.CharField(max_length=200, verbose_name='tytuł') 
+    content = models.TextField(verbose_name='tekst')
     categories = models.ManyToManyField(
         Category, 
-        verbose_name='Kategoria',
+        verbose_name='kategoria',
         related_name='get_posts')       
     author = models.ForeignKey(
         User, 
-        verbose_name='Autor', 
+        verbose_name='autor', 
         on_delete=models.CASCADE)
 
     image = models.ImageField(
         upload_to='img/news/', 
-        verbose_name='Zdjęcie')
+        verbose_name='zdjęcie')
     image_small = models.ImageField(
         upload_to='img/news/', 
-        verbose_name='Zdjęcie małe')
+        verbose_name='zdjęcie małe')
 
-    published = models.DateTimeField(verbose_name='Data publikacji', default=timezone.now)
-    created = models.DateTimeField(auto_now_add=True, verbose_name='Data utworzenia')
-    updated = models.DateTimeField(auto_now=True, verbose_name='Data utworzenia')
+    published = models.DateTimeField(verbose_name='data publikacji', default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True, verbose_name='data utworzenia')
+    updated = models.DateTimeField(auto_now=True, verbose_name='data utworzenia')
 
     class Meta:
-        verbose_name = "Post"
-        verbose_name_plural = "Posty"
+        verbose_name = "post"
+        verbose_name_plural = "posty"
 
     def __str__(self):
         return self.title

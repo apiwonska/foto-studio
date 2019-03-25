@@ -3,12 +3,12 @@ from django.db import models
 
 # Create your models here.
 class Price_list(models.Model):
-	title_price_list = models.CharField(max_length=100, verbose_name='Nazwa Cennika')
-	order = models.PositiveSmallIntegerField(verbose_name = 'Kolejność tabel')
+	title_price_list = models.CharField(max_length=100, verbose_name='nazwa Cennika')
+	order = models.PositiveSmallIntegerField(verbose_name = 'kolejność tabel')
 
 	class Meta:
-		verbose_name = "Cennik - kategoria"
-		verbose_name_plural = "Cenniki - kategorie"
+		verbose_name = "cennik - kategoria"
+		verbose_name_plural = "cenniki - kategorie"
 		ordering = ['order']
 
 	def __str__(self):
@@ -17,15 +17,15 @@ class Price_list(models.Model):
     
 
 class Price(models.Model):
-	price_list = models.ForeignKey(Price_list, on_delete=models.CASCADE, verbose_name='Cennik')
-	service = models.CharField(max_length=200, verbose_name='Usługa')
-	service_details = models.CharField(null=True, blank=True, max_length=200, verbose_name='Szczegóły') 
-	price = models.CharField(max_length=20,verbose_name='Cena')
-	order = models.PositiveSmallIntegerField(verbose_name = 'Kolejność ceny w tabeli')
+	price_list = models.ForeignKey(Price_list, on_delete=models.CASCADE, verbose_name='cennik')
+	service = models.CharField(max_length=200, verbose_name='usługa')
+	service_details = models.CharField(null=True, blank=True, max_length=200, verbose_name='szczegóły') 
+	price = models.CharField(max_length=20,verbose_name='cena')
+	order = models.PositiveSmallIntegerField(verbose_name = 'kolejność ceny w tabeli')
 
 	class Meta:
-		verbose_name = "Cena"
-		verbose_name_plural = "Ceny"
+		verbose_name = "cena"
+		verbose_name_plural = "ceny"
 		ordering = ['price_list','order']
 
 	def __str__(self):

@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+from .views import GalleryPortraitListView, GalleryWeddingsListView, GalleryStudioListView
 
 urlpatterns = [
-    path('oferta/sesje-fotograficzne/', views.services_foto_studio, name='services_foto_studio'),
-    path('oferta/fotografia-slubna/', views.services_foto_weddings, name='services_foto_weddings'),
-    path('oferta/studio-wynajem/', views.services_lease, name='services_lease'),
+    path('oferta/sesje-fotograficzne/', GalleryPortraitListView.as_view(), name='services_foto_studio'),
+    path('oferta/fotografia-slubna/', GalleryWeddingsListView.as_view(), name='services_foto_weddings'),
+    path('oferta/studio-wynajem/', GalleryStudioListView.as_view(), name='services_lease'),
 ]

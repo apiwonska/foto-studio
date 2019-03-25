@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'prices.apps.PricesConfig',
     'news.apps.NewsConfig', 
     'social.apps.SocialConfig',
-    'contact.apps.ContactConfig'   
+    'contact'   
 ]
 
 MIDDLEWARE = [

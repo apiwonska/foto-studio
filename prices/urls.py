@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import PricesPageView
 
 urlpatterns = [
-    path('cennik/', views.prices, name='prices'),
+    path('cennik/', PricesPageView.as_view(), name='prices'),
 ]

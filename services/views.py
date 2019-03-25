@@ -1,16 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 from .models import GalleryPortrait, GalleryWeddings, GalleryStudio
 
-# Create your views here.
+class GalleryPortraitListView(ListView):
 
-def services_foto_studio(request):
-	gallery_portrait = GalleryPortrait.objects.all()
-	return render(request, "services/services_foto_studio.html", {'gallery_portrait': gallery_portrait})
+    model = GalleryPortrait
 
-def services_foto_weddings(request):
-	gallery_weddings = GalleryWeddings.objects.all()
-	return render(request, "services/services_foto_weddings.html", {'gallery_weddings': gallery_weddings})
+class GalleryWeddingsListView(ListView):
 
-def services_lease(request):
-	gallery_studio = GalleryStudio.objects.all()
-	return render(request, "services/services_lease.html", {'gallery_studio': gallery_studio})
+    model = GalleryWeddings
+
+class GalleryStudioListView(ListView):
+
+    model = GalleryStudio
+

@@ -2,12 +2,12 @@
 	{% load static %}
 
 	{% block content %}
-	<!-- Renting Sets -->
+	<!-- Wedding Photography -->
 	<section id="photo-sessions" class="py-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto">
-					<h2 class="text-center mb-5" >Wynajem Planów Zdjęciowych</h2>
+					<h2 class="text-center mb-5">Fotografia Ślubna</h2>
 					<p class="text-justify mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eligendi perspiciatis fugiat, unde nulla et sint! Voluptates atque deserunt, molestiae eligendi id tenetur. Accusamus, nulla blanditiis totam sapiente, optio adipisci rerum odio. Ab reiciendis accusantium vitae, distinctio sint excepturi. Sequi autem nihil ratione obcaecati doloremque quo nesciunt velit enim libero vel sunt itaque, molestias non minus ex officiis! Non labore nesciunt saepe sed consectetur laudantium nisi facilis ratione, quod ea aut optio dolorum illum quo dicta voluptatum, totam dolor facere alias? Porro ipsam laudantium similique illo aspernatur. Placeat possimus dolore, nobis, quibusdam nemo, quasi ad quaerat doloribus aspernatur ratione praesentium.</p>
 				</div>
 			</div>
@@ -19,15 +19,19 @@
 		<div class="container">
 			<h2 class="text-center mb-5">Galeria Zdjęć</h2>
 			<div class="card-columns">
-				{% for foto in gallery_studio %}
+
+				{% for foto in galleryweddings_list %}
 					<div class="card">
 						<a href="{{foto.image.url}}" data-toggle="lightbox" data-gallery="img-gallery">
 							<img src="{{foto.image.url}}" class="card-img">
 						</a>
-					</div>					
-				{% endfor %}
-				
+					</div>	
+				{% endfor %}					
+
 			</div>
 		</div>
 	</section>
 	{% endblock %}
+	
+
+

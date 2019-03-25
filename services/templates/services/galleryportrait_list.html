@@ -21,7 +21,7 @@
 			<h2 class="text-center mb-5">Galeria Zdjęć</h2>
 			<div class="card-columns">
 
-				{% for foto in gallery_portrait %}
+				{% for foto in galleryportrait_list %}
 					<div class="card">
 						<a href="{{foto.image.url}}" data-toggle="lightbox" data-gallery="img-gallery">
 							<img src="{{foto.image.url}}" class="card-img">

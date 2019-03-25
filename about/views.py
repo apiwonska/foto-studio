@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView, TemplateView
 from .models import Staff
 
-# Create your views here.
+class AboutListView(ListView):
 
-def about(request):
-	staff = Staff.objects.all()
-	return render(request, "about/about.html", {'staff':staff})
+    model = Staff
+

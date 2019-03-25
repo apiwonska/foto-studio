@@ -1,9 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 from .models import Price_list, Price
 
-# Create your views here.
+class PricesPageView(TemplateView):
 
-def prices(request):
-	price_lists = Price_list.objects.all()
-	prices = Price.objects.all()
-	return render(request, "prices/prices.html", {'price_lists':price_lists, 'prices': prices})
+    template_name = "prices/prices.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['price_lists'] = Price_list.objects.all()
+        context['prices'] = Price.objects.all()
+        return context
+

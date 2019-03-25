@@ -110,7 +110,7 @@
 						<a href="{% url 'prices' %}" class="nav-link text-expanded {% if request.path == '/cennik/' %}active{% endif %}">Ceny</a>                     
 					</li>
 					<li class="nav-item px-lg-4">
-						<a href="{% url 'news' %}" class="nav-link  text-expanded {% if '/aktualnosci/' in request.path %}active{% endif %}">Aktualności</a>                       
+						<a href="{% url 'news:posts' %}" class="nav-link  text-expanded {% if '/aktualnosci/' in request.path %}active{% endif %}">Aktualności</a>                       
 					</li>
 					<li class="nav-item px-lg-4">
 						<a href="{% url 'contact' %}" class="nav-link text-expanded {% if request.path == '/kontakt/' %}active{% endif %}">Kontakt</a>                       

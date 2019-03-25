@@ -289,6 +289,21 @@ small {
 	text-decoration: none;
 }
 
+#post-list-pagination a {
+	color: #000;
+}
+
+#post-list-pagination li.active a {
+	background: #d0d0d0;
+	border-color: #d0d0d0;
+	color: #000;
+}
+
+#post-list-pagination a:focus {
+	box-shadow: none;
+}
+
+
 /*  --------------CONTACT.HTML-----------------*/
 #contact-form {
 	background: #fffdf6;

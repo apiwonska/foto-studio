@@ -13,6 +13,7 @@ class PostAdmin(admin.ModelAdmin):
 	date_hierarchy = 'published'
 	list_filter = ('author__username', 'categories__name')
 
+	# Creating a column 'Kategorie' where all categories for the post are listed
 	def post_categories(self, obj):
 		return ", ".join([c.name for c in obj.categories.all().order_by("name")])
 	post_categories.short_description = "Kategorie"

@@ -4,6 +4,7 @@ from .models import Post, Category
 class NewsListView(ListView):
 
     model = Post
+    paginate_by = 2
 
 class PostDetailView(DetailView):
 
@@ -12,4 +13,6 @@ class PostDetailView(DetailView):
 class CategoryDetailView(DetailView):
 
     model = Category
+
+
 

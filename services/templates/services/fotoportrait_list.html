@@ -21,10 +21,10 @@
 			<h2 class="text-center mb-5">Galeria Zdjęć</h2>
 			<div class="card-columns">
 
-				{% for foto in galleryportrait_list %}
+				{% for foto in fotoportrait_list %}
 					<div class="card">
 						<a href="{{foto.image.url}}" data-toggle="lightbox" data-gallery="img-gallery">
-							<img src="{{foto.image.url}}" class="card-img">
+							<img src="{{foto.image_thumbnail.url}}" class="card-img">
 						</a>
 					</div>
 				{% endfor %}

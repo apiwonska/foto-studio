@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'imagekit',
+    'ckeditor',
     'about.apps.AboutConfig',
-    'services.apps.ServicesConfig',
+    'contact',
+    'core',
+    'news.apps.NewsConfig',
     'prices.apps.PricesConfig',
-    'news.apps.NewsConfig', 
-    'social.apps.SocialConfig',
-    'contact'   
+    'services.apps.ServicesConfig',
+    'social.apps.SocialConfig'
 ]
 
 MIDDLEWARE = [
@@ -86,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'foto_studio',
         'USER': 'anna',
-        'PASSWORD':'password123',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'PASSWORD': 'password123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -135,8 +137,20 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#Email config
+# Email config
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '5b3f223c9430b2'
 EMAIL_HOST_PASSWORD = '2c8b8001109b86'
 EMAIL_PORT = '2525'
+
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+        ]
+    }
+}

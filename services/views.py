@@ -1,15 +1,18 @@
 from django.views.generic import ListView
-from .models import GalleryPortrait, GalleryWeddings, GalleryStudio
 
-class GalleryPortraitListView(ListView):
+from .models import FotoPortrait, FotoStudio, FotoWedding
 
-    model = GalleryPortrait
 
-class GalleryWeddingsListView(ListView):
+class FotoPortraitListView(ListView):
 
-    model = GalleryWeddings
+    model = FotoPortrait
 
-class GalleryStudioListView(ListView):
 
-    model = GalleryStudio
+class FotoWeddingListView(ListView):
 
+    model = FotoWedding
+
+
+class FotoStudioListView(ListView):
+
+    model = FotoStudio

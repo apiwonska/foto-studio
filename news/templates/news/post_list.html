@@ -22,7 +22,7 @@
 			{% for post in post_list reversed %}
 				<div class="row mb-4">
 					<div class="col-md-4 mb-3">
-						<img src="{{post.image_small.url}}" class="img-fluid">
+						<img src="{{post.image_thumbnail.url}}" class="img-fluid">
 					</div>
 					<div class="col-md-8">
 						<h5>{{post.title}}</h5>
@@ -36,7 +36,7 @@
 							| Autor: 
 							{{post.author}}
 						</small>
-						<p class="text-justify">{{ post.content_short }}...</p>
+						<p class="text-justify">{{ post.content | truncatewords:70 | safe}}</p>
 						<a href="{% url 'news:post' post.id %}" class="">Dowiedz się więcej <i class="fas fa-long-arrow-alt-right"></i></a>		
 					</div>
 				</div>

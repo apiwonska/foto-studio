@@ -2,5 +2,6 @@ from django.apps import AppConfig
 
 
 class PricesConfig(AppConfig):
-	name = 'prices'
-	verbose_name='Cennik'
+
+    name = 'prices'
+    verbose_name = 'cennik'

@@ -2,5 +2,6 @@ from django.apps import AppConfig
 
 
 class ServicesConfig(AppConfig):
+
     name = 'services'
-    verbose_name='Oferta / Galeria'
+    verbose_name = 'oferta / galeria'

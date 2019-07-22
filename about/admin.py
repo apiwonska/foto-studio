@@ -1,5 +1,11 @@
 from django.contrib import admin
+
 from .models import Staff
 
-# Register your models here.
-admin.site.register(Staff)
+
+class StaffAdmin(admin.ModelAdmin):
+
+    list_display = ('__str__', 'job_title')
+
+
+admin.site.register(Staff, StaffAdmin)

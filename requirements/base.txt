@@ -4,7 +4,7 @@ django-ckeditor==5.7.1
 django-imagekit==4.0.2
 django-js-asset==1.2.2
 pilkit==2.0
-Pillow==5.3.0
+Pillow==6.2.0
 pkg-resources==0.0.0
 psycopg2==2.7.6.1
 psycopg2-binary==2.7.6.1

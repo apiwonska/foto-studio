@@ -9,6 +9,8 @@ local_settings.py
 db.sqlite3
 /media
 /static
+.env
+mydatabase
 
 # Unit test / coverage report
 htmlcov/

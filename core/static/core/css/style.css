@@ -4,6 +4,12 @@
 
 body {
 	background-image: url(../img/white_paperboard.png);
+	min-height: 100vh;
+	min-width: 300px;
+}
+
+main {
+	flex-grow: 1;
 }
 
 h1, h2 {

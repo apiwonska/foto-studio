@@ -3,7 +3,7 @@ from .base import env
 from .base import INSTALLED_APPS
 import environ
 
-env = environ.Env(USE_S3=(bool, False))
+env = environ.Env(USE_S3=(bool, True))
 
 INSTALLED_APPS += ('storages',)
 

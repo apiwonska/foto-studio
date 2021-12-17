@@ -30,6 +30,7 @@ django-split-settings = "*"
 django-environ = "*"
 boto3 = "*"
 django-storages = "*"
+django-heroku = "*"
 
 [dev-packages]
 

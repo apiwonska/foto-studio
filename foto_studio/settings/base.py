@@ -11,22 +11,31 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print("PRINT",BASE_DIR)
 
+env = env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=(str, ""),
+)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+# reading .env file
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7zu2z5@u!lv0_w5b(1qrm1)0$&yefjasm5!)w+n+m9k(ogy(@w'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
-
+if DEBUG == False and env("ALLOWED_HOSTS"):
+    ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+else:
+    ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -79,22 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'foto_studio.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'foto_studio',
-        'USER': 'anna',
-        'PASSWORD': 'password123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -132,16 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Media config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Email config
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '5b3f223c9430b2'
-EMAIL_HOST_PASSWORD = '2c8b8001109b86'
-EMAIL_PORT = '2525'
 
 # Ckeditor
 CKEDITOR_CONFIGS = {

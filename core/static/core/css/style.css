@@ -79,7 +79,7 @@ small {
 }
 
  #siteHeading, #mainNav{
-	background: var(--lightgrey-color);
+	background: #f3f3f3;
 }
 
 #siteHeading a {
@@ -218,7 +218,7 @@ small {
 		border: 1px solid rgba(0,0,0,0.1);
 		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 		border-top: transparent;
-		background: var(--lightgrey-color);
+		background: #f3f3f3;
 	}	
 }
 
@@ -263,7 +263,7 @@ small {
 }
 
 .table-pricing {
-	background: #fffdf6;
+	background: #fdfdfd;
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
 	border-radius: 5px;
 	padding: 30px;
@@ -312,7 +312,7 @@ small {
 
 /*  --------------CONTACT.HTML-----------------*/
 #contact-form {
-	background: #fffdf6;
+	background: #fafafa;
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
 }
 

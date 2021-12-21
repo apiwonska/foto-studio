@@ -8,7 +8,8 @@
 		
 			<h2 class="text-center mb-3">Aktualności</h2>
 
-			<div id="search-container" class="mb-5">
+			{% comment %} <div id="search-container"
+					 class="mb-5">
 				<div class="input-group d-flex justify-content-end">
 					<div class="input-group-append">
 						<input type="text" class="form-control" placeholder="Szukaj..">
@@ -17,12 +18,17 @@
 						</button>
 					</div>
 				</div>			
-			</div>
+			</div> {% endcomment %}
 			
-			{% for post in post_list reversed %}
+			{% for post in post_list %}
 				<div class="row mb-4">
 					<div class="col-md-4 mb-3">
+						{% if post.image_thumbnail %}
 						<img src="{{post.image_thumbnail.url}}" class="img-fluid">
+						{% else %}
+						<img src="{% static 'news/img/news_default.jpg' %}"
+								 class="img-fluid">
+						{% endif %}
 					</div>
 					<div class="col-md-8">
 						<h5>{{post.title}}</h5>

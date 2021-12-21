@@ -6,7 +6,7 @@ from .models import Post, Category
 class NewsListView(ListView):
 
     model = Post
-    paginate_by = 2
+    paginate_by = 4
     paginate_orphans = 1
     ordering = ['-published']
 

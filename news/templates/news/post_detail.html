@@ -20,8 +20,16 @@
 								{{ post.author }}
 							</small>
 						</p>
-					</header>			
-					<div><img src="{{post.image.url}}" class="img-fluid mb-4"></div>
+					</header>
+					<div>
+						{% if post.image %}
+						<img src="{{post.image.url}}"
+								 class="img-fluid mb-4">
+						{% else %}
+						<img src="{% static 'news/img/news_default.jpg' %}"
+								 class="img-fluid mb-4">
+						{% endif %}
+					</div>
 					<div class="text-justify">						
 						{{ post.content|safe }}
 						<a href="{% url 'news:posts' %}" class=""><i class="fas fa-long-arrow-alt-left"></i>  Powrót do listy wydarzeń</a>

@@ -40,7 +40,8 @@ class Post(models.Model):
         processors=[ResizeToFill(920, 460)],
         format='JPEG',
         options={'quality': 60},
-        default='img/news/news_default.jpg',
+        null=True,
+        blank=True,
         verbose_name='zdjęcie')
     image_thumbnail = ImageSpecField(
         source='image',

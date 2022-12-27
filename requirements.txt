@@ -35,7 +35,7 @@ pyflakes==2.1.1
 python-dateutil==2.8.0
 pytz==2018.7
 s3transfer==0.5.0; python_version >= '3.6'
-setuptools==59.6.0; python_version >= '3.6'
+setuptools==65.5.1; python_version >= '3.6'
 six==1.12.0
 sqlparse==0.4.2; python_version >= '3.5'
 text-unidecode==1.2
